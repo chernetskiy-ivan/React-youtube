@@ -15,8 +15,8 @@ export default function TodoList(props) {
         //jsx code
         <ul style={styles.ul}>
             {/*скобки говорят что мы сейчас будем писать js код*/}
-            { props.todos.map(todo => {
-                return <TodoItem todo={todo} key={ todo.id }></TodoItem>
+            { props.todos.map((todo, index) => {
+                return <TodoItem todo={todo} key={ todo.id } index={index}></TodoItem>
             }) }
         </ul>
     )
