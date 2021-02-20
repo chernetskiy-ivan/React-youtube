@@ -10,13 +10,14 @@ const styles = {
 }
 
 
-export default function TodoList() {
+export default function TodoList(props) {
     return(
         //jsx code
         <ul style={styles.ul}>
-            <TodoItem></TodoItem>
-            <TodoItem></TodoItem>
-            <TodoItem></TodoItem>
+            {/*скобки говорят что мы сейчас будем писать js код*/}
+            { props.todos.map(todo => {
+                return <TodoItem todo={todo} key={ todo.id }></TodoItem>
+            }) }
         </ul>
     )
 }
