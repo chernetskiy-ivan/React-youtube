@@ -22,10 +22,12 @@ function TodoItem({ todo, index }) {
             <span>
                 <input type="checkbox" style={styles.input}/>
                 <strong>{index + 1}</strong>
+                {/*символ пробела*/}
+                &nbsp;
                 { todo.title }
             </span>
 
-            <button>&times;</button>
+            <button className="rm">&times;</button>
         </li>
     )
 }
