@@ -8,11 +8,15 @@ function App() {
         {id: 3, completed: false, title: 'Купить молоко'}
     ]
 
+    function toggleTodo(id){
+        console.log('todo id ', id)
+    }
+
   return (
       <div className='wrapper'>
           <h1>React tutorial</h1>
 
-          <TodoList todos={todos}></TodoList>
+          <TodoList todos={todos} onToggle={toggleTodo}></TodoList>
       </div>
   )
 }
