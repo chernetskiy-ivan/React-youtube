@@ -1,6 +1,7 @@
 import React from 'react'
 import TodoList from './todo/TodoList'
 import Context from './context'
+import AddTodo from "./todo/AddTodo";
 
 function App() {
     const [todos, setTodos] = React.useState([
@@ -23,11 +24,19 @@ function App() {
         ))
     }
 
+    function addTodo(title){
+        setTodos(todos.concat([{
+            title: title,//можно просто записать title,
+            id: Date.now(),
+            completed: false
+        }]))
+    }
+
   return (
       <Context.Provider value={{removeTodo: removeTodo}}>
           <div className='wrapper'>
               <h1>React tutorial</h1>
-
+              <AddTodo onCreate={addTodo}/>
               {todos.length ? <TodoList todos={todos} onToggle={toggleTodo}></TodoList> : <p>No todos</p>}
 
           </div>
