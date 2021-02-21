@@ -4,7 +4,7 @@ import Context from './context'
 
 function App() {
     const [todos, setTodos] = React.useState([
-        {id: 1, completed: false, title: 'Купить хдеб'},
+        {id: 1, completed: false, title: 'Купить хлеб'},
         {id: 2, completed: false, title: 'Купить масло'},
         {id: 3, completed: false, title: 'Купить молоко'}
     ])
@@ -28,7 +28,8 @@ function App() {
           <div className='wrapper'>
               <h1>React tutorial</h1>
 
-              <TodoList todos={todos} onToggle={toggleTodo}></TodoList>
+              {todos.length ? <TodoList todos={todos} onToggle={toggleTodo}></TodoList> : <p>No todos</p>}
+
           </div>
       </Context.Provider>
   )
